@@ -1,0 +1,21 @@
+.body-custom {
+    background-color: #ffffff;
+    width: 100vw;
+    height: 100vh;
+}
+
+.switch-overlay {
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    background-color: #0e1416;
+    width: 100vw;
+    height: 100vh;
+    z-index: 20;
+    transition: background-color 0.5s ease-out;
+    pointer-events: none;
+}
+
+.switch-overlay.remove {
+    background-color: transparent;
+}
