@@ -31,6 +31,16 @@
     color:#ffffff;
 }
 
+@media screen and (max-width: 600px) {
+    .scrambler {
+        font-size: 4em; /* Adjust as needed */
+    }
+
+    .typewriter h1 {
+        font-size: 4em; /* Adjust as needed */
+    }
+}
+
 /* The typing effect */
 @keyframes typing {
     from {

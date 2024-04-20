@@ -4,10 +4,10 @@ document.querySelector('.btn-custom').addEventListener('click', function() {
     var overlay = document.querySelector('.button-overlay');
     overlay.classList.add('show');
 
-        // // Remove the 'show' class after a delay
-        // setTimeout(function() {
-        //     overlay.classList.remove('show');
-        // }, 5000);  // Change this to the desired duration
+        // Remove the 'show' class after a delay
+        setTimeout(function() {
+            overlay.classList.remove('show');
+        }, 1000);  // Change this to the desired duration
 
         // Redirect to welcome.html after 1 second
         setTimeout(function() {
