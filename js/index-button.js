@@ -11,7 +11,7 @@ document.querySelector('.btn-custom').addEventListener('click', function() {
 
         // Redirect to welcome.html after 1 second
         setTimeout(function() {
-            window.location.href = "welcome.html";
+            window.location.href = "../lib/welcome.html";
             // overlay.classList.remove('show');
         }, 700);
 });
