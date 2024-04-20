@@ -2,6 +2,7 @@
 
 .scrambler {
     overflow: hidden;
+    white-space: nowrap;
     justify-content: center;
     padding: 20px;
     font-family: 'JetBrains Mono', monospace !important;
@@ -29,16 +30,6 @@
     margin-bottom: 50px;
     font-family: 'JetBrains Mono', monospace !important;
     color:#ffffff;
-}
-
-@media screen and (max-width: 600px) {
-    .scrambler {
-        font-size: 4em; /* Adjust as needed */
-    }
-
-    .typewriter h1 {
-        font-size: 4em; /* Adjust as needed */
-    }
 }
 
 /* The typing effect */
