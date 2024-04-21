@@ -96,6 +96,7 @@
 
 .button-overlay {
     position: absolute;
+    top: 0;
     background-color: transparent;
     width: 100vw;
     height: 100vh;

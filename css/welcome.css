@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+.body-custom {
+    background-color: #0e1416;
+    width: 100vw;
+    height: 100vh;
+}
+
+.switch-overlay {
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    background-color: #0e1416;
+    width: 100vw;
+    height: 100vh;
+    z-index: 20;
+    transition: background-color 0.5s ease-out;
+    pointer-events: none;
+}
+
+.switch-overlay.remove {
+    background-color: transparent;
+}
+
+.navbar {
+    font-family: 'JetBrains Mono', monospace;
+    height: 100px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2em' height='2em' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    z-index: 3;
+    /* display: flex;
+    align-items: center; */
+}
+
+.navbar-brand {
+    font-size: 2em; /* adjust this value as needed */
+    z-index: 3;
+    /* display: flex;
+    align-items: center; */
+}
+
+.colored-box {
+    width: 100vw; /* adjust as needed */
+    height: 100px; /* adjust as needed */
+    background-color: #ff0000; /* adjust as needed */
+}
