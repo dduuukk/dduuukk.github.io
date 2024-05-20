@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+/* General fonts and colors */
+:root {
+    --main-font: 'JetBrains Mono', monospace;
+    --main-font-color: #ffffff;
+    --main-shadow-color: #000000;
+    --background-color: #0e1416;
+    --button-hover-color: #5a6268;
+}
+
+/* Custom button styling */
+.btn-custom {
+    /* font-size: 1.4em; */
+    color: #ffffff !important; /* Change to your preferred color */
+    background-color: #0e1416;
+    border: 2px solid #ffffff !important;
+    font-family: var(--main-font);
+    /* box-shadow: 0px 0px 30px #000000; */
+    /* opacity: 0; */
+    /* animation: fadeIn .5s ease-in 0.2s forwards; */
+}
+.btn-custom:hover {
+    color: #5a6268 !important; /* Change to your preferred hover color */
+    background-color: #ffffff !important; /* Change to your preferred hover background color */
+    /* border-color: #5a6268 !important; Change to your preferred hover border color */
+}
+.btn-custom:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 0.2rem #5a6268 !important; /* Change to your preferred color */
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+    background-color: #ececec; /* Change this to your desired color */
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+    background-color: #ececec; /* Change this to your desired color */
+}
+
+.hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.hamburger:focus {
+    outline: none;
+}

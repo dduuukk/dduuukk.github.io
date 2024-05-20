@@ -1,3 +1,5 @@
+// Christian Bender
+
 document.querySelector('.btn-custom').addEventListener('click', function() {
     // print a message to the console
     // console.log('Button clicked!');

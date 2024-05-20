@@ -1,99 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
-
+/* @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap'); */
+@import url(master.css);
+/* 
+Text scrambler style
+Called by js/text-scramble.js to scramble the text on load for index.html
+*/
 .scrambler {
     overflow: hidden;
     white-space: nowrap;
     justify-content: center;
     padding: 20px;
-    font-family: 'JetBrains Mono', monospace !important;
+    font-family: var(--main-font) !important;
     color: #ffffff;
     font-size: 5em;
     margin-bottom: 30px;
     text-shadow: 0px 0px 20px #000000;
 }
 
-.typewriter h1 {
-    overflow: hidden;
-    /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid orange;
-    /* The typwriter cursor */
-    white-space: nowrap;
-    /* Keeps the content on a single line */
-    margin: 0 auto;
-    /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em;
-    /* Adjust as needed */
-    animation:
-        typing 2s steps(8, end),
-        blink-caret .75s step-end infinite;
-
-    margin-bottom: 50px;
-    font-family: 'JetBrains Mono', monospace !important;
-    color:#ffffff;
-}
-
-/* The typing effect */
-@keyframes typing {
-    from {
-        width: 0
-    }
-
-    to {
-        width: 100%
-    }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-
-    from,
-    to {
-        border-color: transparent
-    }
-
-    50% {
-        border-color: orange;
-    }
-}
-
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
+/* Button fading and animation + custom style for index */
 .btn-custom {
     font-size: 1.4em;
-    color: #ffffff !important; /* Change to your preferred color */
-    background-color: #0e1416;
-    border: 2px solid #ffffff !important;
-    font-family: 'JetBrains Mono', monospace !important;
-    /* box-shadow: 0px 0px 30px #000000; */
     opacity: 0;
     animation: fadeIn .5s ease-in 0.2s forwards;
-}
-.btn-custom:hover {
-    color: #5a6268 !important; /* Change to your preferred hover color */
-    background-color: #ffffff !important; /* Change to your preferred hover background color */
-    /* border-color: #5a6268 !important; Change to your preferred hover border color */
-}
-.btn-custom:focus {
-    outline: none !important;
-    box-shadow: 0 0 0 0.2rem #5a6268 !important; /* Change to your preferred color */
-}
-
-.bg-custom-index {
-    /* background-color: #222529; */
-    background:linear-gradient(#3a3a3a 30%, #222529 70%);
 }
 @keyframes fadeIn {
     to {
         opacity: 1;
     }
 }
-
+/* 
+Background colored overlay that fades in when button is pressed for transition
+Called by js/index-button.js
+*/
 .button-overlay {
     position: absolute;
     top: 0;
@@ -104,13 +41,14 @@
     transition: background-color 0.5s ease-in;
     pointer-events: none;
 }
-
 .button-overlay.show {
     background-color: #0e1416;
 }
 
-/* ----- Overlay ----- */
-.overlay {
+/* 
+-------- Grid -------- 
+*/
+.grid-bg {
     background-color: #0e1416;
     width: 100vw;
     height: 100vh;
@@ -143,7 +81,7 @@
     overflow: hidden;
     position: absolute;
     width: 50vw;
-    height: 200vh;
+    height: 300vh;
     /* left: 50%; 
     top: 50%; */
     background-image: linear-gradient(to right, rgba(158, 158, 158, 0.3) 1px, transparent 0), linear-gradient(to bottom, rgba(158, 158, 158, 0.3) 1px, transparent 0);
@@ -160,7 +98,7 @@
     overflow: hidden;
     position: absolute;
     width: 50vw;
-    height: 200vh;
+    height: 300vh;
     right: 0;
     /* left: 50%; 
     top: 50%; */

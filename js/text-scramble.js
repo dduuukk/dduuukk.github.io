@@ -1,44 +1,23 @@
-// const scrambler = document.getElementById('scrambler');
-// const text = 'cvsb.com';
-// let index = 0;
+// Christian Bender
+// Created based on https://www.codepel.com/animation/javascript-text-scramble-effect/
 
-// function randomChar() {
-//     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-//     return chars[Math.floor(Math.random() * chars.length)];
-// }
-
-// function scramble() {
-//     let scramble = '';
-//     for (let i = 0; i < text.length; i++) {
-//         scramble += i < index ? text[i] : randomChar();
-//     }
-//     scrambler.textContent = scramble;
-// }
-
-// function type() {
-//     if (index < text.length) {
-//         scrambler.textContent = scrambler.textContent.substring(0, index) + text[index] + scrambler.textContent.substring(index + 1);
-//         index++;
-//     } else {
-//         clearInterval(typeInterval); // Clear the interval when all letters are set
-//     }
-// }
-
-// typeInterval = setInterval(type, 300); // This controls the delay before the current index is set to the desired letter
-// setInterval(scramble, 50);
-// type();
-
-
-// ——————————————————————————————————————————————————
-// TextScramble
-// ——————————————————————————————————————————————————
-
+/**
+ * Text scrambler class that animates the text content of an element.
+ */
 class TextScramble {
+    
     constructor(el) {
         this.el = el; // Element to display the text
-        this.chars = "!<>-_\\/[]{}—=+*^?#________0123456789";
+        this.chars = "!<>-_\\/[]{}—=+*^?#________0123456789"; // Scramble character set
         this.update = this.update.bind(this);
     }
+
+    /**
+     * Sets the text content of an element with animation.
+     *
+     * @param {string} newText - The new text to be set.
+     * @returns {Promise} - A promise that resolves when the animation is complete.
+     */
     setText(newText) {
         const oldText = this.el.innerText;
         // Get the maximum length of the old and new text to prevent the animation from stopping prematurely
@@ -64,6 +43,11 @@ class TextScramble {
         this.update();
         return promise;
     }
+
+    /**
+     * Updates the animation frame and renders the characters accordingly.
+     * If all characters have reached their final state, resolves the promise.
+     */
     update() {
         let output = "";
         let complete = 0;
@@ -99,16 +83,26 @@ class TextScramble {
             this.frame++;
         }
     }
+
+    /**
+     * Returns a random character from the character set.
+     *
+     * @returns {string} - A random character from the character set.
+     */
     randomChar() {
         // Return a random character from the character set
         return this.chars[Math.floor(Math.random() * this.chars.length)];
     }
 }
 
-// ——————————————————————————————————————————————————
-// Example
-// ——————————————————————————————————————————————————
-
-const el = document.querySelector(".scrambler");
-const fx = new TextScramble(el);
-fx.setText("cvsb.com");
+/**
+ * Function that runs text scramble when the window is loaded.
+ */
+window.onload = function() {
+    // Get the element with the class "scrambler"
+    const textElement = document.querySelector(".scrambler");
+    // Create a new TextScramble object with the element
+    const fx = new TextScramble(textElement);
+    // Set the text content of the element to "cvsb.com"
+    fx.setText("cvsb.com");
+};
