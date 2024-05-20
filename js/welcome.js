@@ -15,6 +15,5 @@ button.addEventListener('click', function() {
   // Toggle the visibility of the menu
   var menu = document.getElementById('menu');
   menu.classList.toggle('show-menu');
-  var mainContent = document.getElementById('main-content');
-  mainContent.classList.toggle('show-menu');
+  document.body.classList.toggle('blur');
 });

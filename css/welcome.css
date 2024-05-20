@@ -31,7 +31,8 @@ Overlay for the fade in when switching onto the page
     z-index: 2;
     display: flex;
     align-items: center; */
-    z-index: 10;
+    z-index: 20;
+    background-color: var(--background-color);
 }
 
 .navbar-toggler-icon {
@@ -49,12 +50,6 @@ Overlay for the fade in when switching onto the page
     align-items: center; */
 }
 
-.colored-box {
-    width: 100vw; /* adjust as needed */
-    height: 100px; /* adjust as needed */
-    background-color: #ff0000; /* adjust as needed */
-}
-
 #menu {
     position: fixed;
     top: 60px;
@@ -63,7 +58,6 @@ Overlay for the fade in when switching onto the page
     box-sizing: border-box;
     /* Other styles */
 }
-
 
 .hidden-menu {
     /* display: none; */
@@ -74,34 +68,19 @@ Overlay for the fade in when switching onto the page
     overflow: hidden;
 }
 
-#main-content {
-    overflow: hidden;
-    transition: filter 0.5s ease;
-    z-index: 1;
-}
-
-#main-content.show-menu {
-    filter: blur(5px);
-}
-
-#image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-#image-container img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
 .show-menu {
     /* display: block; */
     visibility: visible;
     opacity: 1;
     transition: opacity 0.5s ease, visibility 0s 0s;
     pointer-events: auto;
+}
+
+body > *:not(nav):not(#menu) {
+    transition: filter 0.5s ease;
+}
+
+body.blur > *:not(nav):not(#menu) {
+    filter: blur(5px);
 }
 
