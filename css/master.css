@@ -52,3 +52,98 @@
 .hamburger:focus {
     outline: none;
 }
+
+.scrambler-menu {
+    overflow: hidden;
+    white-space: nowrap;
+    justify-content: center;
+    padding: 0 20px;
+    font-family: var(--main-font) !important;
+    font-size: 3em;
+    color: #ececec;
+    text-shadow: 0px 0px 20px #000000;
+    position: relative;
+}
+
+.scrambler-menu::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 20px; /* Done because of absolute positioning and padding needed in scrambler*/
+    color: #ffffff;
+    /* Hover color */
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    text-shadow: 0px 0px 4px #ffffff ;
+    transition: width .5s ease-out;
+}
+  
+.scrambler-menu:hover::before {
+width: 100%;
+}
+
+
+.navbar {
+    font-family: var(--main-font);
+    /* height: 100px;
+    z-index: 2;
+    display: flex;
+    align-items: center; */
+    z-index: 20;
+    background-color: var(--background-color);
+}
+
+.navbar-brand {
+    font-size: 2em; /* adjust this value as needed */
+    z-index: 3;
+    color: #ececec;
+    /* display: flex;
+    align-items: center; */
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    padding-top: 15vh;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    /* Other styles */
+}
+
+.hidden-menu {
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0s 0.5s;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.show-menu {
+    /* display: block; */
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease, visibility 0s 0s;
+    pointer-events: auto;
+}
+
+#menu a {
+    font-family: var(--main-font);
+    margin: 5px;
+    color: #ececec; /* This will make the text color the same as the parent element */
+    text-decoration: none; /* This will remove the underline */
+}
+
+body > *:not(nav):not(#menu) {
+    transition: filter 0.5s ease;
+}
+
+body.blur > *:not(nav):not(#menu) {
+    filter: blur(10px);
+}

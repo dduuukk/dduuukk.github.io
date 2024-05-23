@@ -1,40 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 @import url(master.css);
 
-.scrambler-container {
-    position: relative;
-}
-
-.scrambler {
-    overflow: hidden;
-    white-space: nowrap;
-    justify-content: center;
-    padding: 0 20px;
-    font-family: var(--main-font) !important;
-    font-size: 3em;
-    color: #ececec;
-    text-shadow: 0px 0px 20px #000000;
-    position: relative;
-}
-
-.scrambler::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 20px; /* Done because of absolute positioning and padding needed in scrambler*/
-    color: #ffffff;
-    /* Hover color */
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-    text-shadow: 0px 0px 5px #ffffff ;
-    transition: width .5s ease-out;
-}
-  
-.scrambler:hover::before {
-width: 100%;
-
-}
 
 .body-custom {
     background-color: #0e1416;
@@ -60,74 +26,4 @@ Overlay for the fade in when switching onto the page
     background-color: transparent;
 }
 
-.navbar {
-    font-family: var(--main-font);
-    /* height: 100px;
-    z-index: 2;
-    display: flex;
-    align-items: center; */
-    z-index: 20;
-    background-color: var(--background-color);
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2em' height='2em' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-    z-index: 3;
-    /* display: flex;
-    align-items: center; */
-}
-
-.navbar-brand {
-    font-size: 2em; /* adjust this value as needed */
-    z-index: 3;
-    color: #ececec;
-    /* display: flex;
-    align-items: center; */
-}
-
-#menu {
-    position: fixed;
-    top: 0;
-    height: 100vh;
-    width: 100vw;
-    box-sizing: border-box;
-    display: flex;
-    padding-top: 15vh;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    /* Other styles */
-}
-
-.hidden-menu {
-    /* display: none; */
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.5s ease, visibility 0s 0.5s;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.show-menu {
-    /* display: block; */
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.5s ease, visibility 0s 0s;
-    pointer-events: auto;
-}
-
-#menu a {
-    font-family: var(--main-font);
-    margin: 20px;
-    color: #ececec; /* This will make the text color the same as the parent element */
-    text-decoration: none; /* This will remove the underline */
-}
-
-body > *:not(nav):not(#menu) {
-    transition: filter 0.5s ease;
-}
-
-body.blur > *:not(nav):not(#menu) {
-    filter: blur(10px);
-}
 

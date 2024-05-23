@@ -31,8 +31,8 @@ class TextScrambleShort {
             // Store new character or empty string if character doesn't exist
             const to = newText[i] || '';
             // Generate a random start and end frame for each character
-            const start = Math.floor(Math.random() * 40);
-            const end = start + Math.floor(Math.random() * 45);
+            const start = Math.floor(Math.random() * 35);
+            const end = start + Math.floor(Math.random() * 35);
             this.queue.push({ from, to, start, end });
         }
         // Cancel the previous frame request to prevent overlapping animations
@@ -62,7 +62,7 @@ class TextScrambleShort {
             } else if (this.frame >= start) {
                 // If the character is not set, set it to a random character
                 // 28% chance of character change on each loop
-                if (!char || Math.random() < 0.38) {
+                if (!char || Math.random() < 0.28) {
                     char = this.randomChar();
                     this.queue[i].char = char;
                 }
@@ -100,14 +100,11 @@ const menuTexts = ['menu item 1', 'menu item 2', 'menu item 3'];
 
 const buttonsc = document.querySelector('.hamburger');
 
-// Get all text elements
-const textElements = document.querySelectorAll('.scrambler');
-
 let isMenuOpen = false; // Flag to track menu state
 
 buttonsc.addEventListener('click', () => {
   // Get all text elements
-  const textElements = document.querySelectorAll('.scrambler');
+  const textElements = document.querySelectorAll('.scrambler-menu');
 
   // Toggle the menu state
   isMenuOpen = !isMenuOpen;
