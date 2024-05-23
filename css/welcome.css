@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 @import url(master.css);
 
+.scrambler {
+    overflow: hidden;
+    white-space: nowrap;
+    justify-content: center;
+    /* padding: 20px; */
+    font-family: var(--main-font) !important;
+    font-size: 3em;
+    color: #ececec;
+    text-shadow: 0px 0px 20px #000000;
+}
+
 .body-custom {
     background-color: #0e1416;
     width: 100vw;
@@ -52,10 +63,15 @@ Overlay for the fade in when switching onto the page
 
 #menu {
     position: fixed;
-    top: 60px;
-    height: calc(100vh - 60px);
+    top: 0;
+    height: 100vh;
     width: 100vw;
     box-sizing: border-box;
+    display: flex;
+    padding-top: 15vh;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
     /* Other styles */
 }
 
@@ -76,11 +92,18 @@ Overlay for the fade in when switching onto the page
     pointer-events: auto;
 }
 
+#menu a {
+    font-family: var(--main-font);
+    margin: 20px;
+    color: #ececec; /* This will make the text color the same as the parent element */
+    text-decoration: none; /* This will remove the underline */
+}
+
 body > *:not(nav):not(#menu) {
     transition: filter 0.5s ease;
 }
 
 body.blur > *:not(nav):not(#menu) {
-    filter: blur(5px);
+    filter: blur(10px);
 }
 
