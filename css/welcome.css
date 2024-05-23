@@ -17,13 +17,14 @@ Overlay for the fade in when switching onto the page
     background-color: var(--background-color);
     width: 100vw;
     height: 100vh;
-    z-index: 20;
-    transition: background-color 0.5s ease-out;
+    z-index: 30;
     pointer-events: none;
+    animation: fadeOut 0.5s ease-out forwards;
 }
 
-.switch-overlay.remove {
-    background-color: transparent;
+@keyframes fadeOut {
+    from {background-color: var(--background-color);}
+    to {background-color: transparent;}
 }
 
 

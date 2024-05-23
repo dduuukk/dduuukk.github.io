@@ -96,7 +96,7 @@ class TextScrambleShort {
 }
 
 // Define the texts for the menu items
-const menuTexts = ['menu item 1', 'menu item 2', 'menu item 3'];
+const menuTexts = ['about me', 'projects', 'contact'];
 
 const buttonsc = document.querySelector('.hamburger');
 

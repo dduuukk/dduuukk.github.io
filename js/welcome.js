@@ -1,8 +1,4 @@
-window.onload = function() {
-    var element = document.querySelector('.switch-overlay');
-    console.log(element);
-    element.classList.add('remove');
-}
+// Christian Bender
 
 // Get the button element
 var button = document.querySelector('.hamburger');
