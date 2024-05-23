@@ -116,5 +116,7 @@ buttonsc.addEventListener('click', () => {
   textElements.forEach((textElement, index) => {
     const fx = new TextScrambleShort(textElement);
     fx.setText(isMenuOpen ? menuTexts[index] : "");
+    // Set the data-text attribute to the new text
+    textElement.setAttribute('data-text', isMenuOpen ? menuTexts[index] : "");
   });
 });

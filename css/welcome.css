@@ -1,15 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 @import url(master.css);
 
+.scrambler-container {
+    position: relative;
+}
+
 .scrambler {
     overflow: hidden;
     white-space: nowrap;
     justify-content: center;
-    /* padding: 20px; */
+    padding: 0 20px;
     font-family: var(--main-font) !important;
     font-size: 3em;
     color: #ececec;
     text-shadow: 0px 0px 20px #000000;
+    position: relative;
+}
+
+.scrambler::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 20px; /* Done because of absolute positioning and padding needed in scrambler*/
+    color: #ffffff;
+    /* Hover color */
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    text-shadow: 0px 0px 5px #ffffff ;
+    transition: width .5s ease-out;
+}
+  
+.scrambler:hover::before {
+width: 100%;
+
 }
 
 .body-custom {
