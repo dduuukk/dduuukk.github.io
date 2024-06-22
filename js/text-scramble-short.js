@@ -31,8 +31,8 @@ class TextScrambleShort {
             // Store new character or empty string if character doesn't exist
             const to = newText[i] || '';
             // Generate a random start and end frame for each character
-            const start = Math.floor(Math.random() * 35);
-            const end = start + Math.floor(Math.random() * 35);
+            const start = Math.floor(Math.random() * 12);
+            const end = start + Math.floor(Math.random() * 12);
             this.queue.push({ from, to, start, end });
         }
         // Cancel the previous frame request to prevent overlapping animations
