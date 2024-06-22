@@ -12,9 +12,9 @@
 /* Custom button styling */
 .btn-custom {
     /* font-size: 1.4em; */
-    color: #ffffff !important; /* Change to your preferred color */
+    color: #ececec !important; /* Change to your preferred color */
     background-color: #0e1416;
-    border: 2px solid #ffffff !important;
+    border: 2px solid #ececec !important;
     font-family: var(--main-font);
     /* box-shadow: 0px 0px 30px #000000; */
     /* opacity: 0; */
@@ -22,7 +22,7 @@
 }
 .btn-custom:hover {
     color: #5a6268 !important; /* Change to your preferred hover color */
-    background-color: #ffffff !important; /* Change to your preferred hover background color */
+    background-color: #ececec !important; /* Change to your preferred hover background color */
     /* border-color: #5a6268 !important; Change to your preferred hover border color */
 }
 .btn-custom:focus {
@@ -96,7 +96,6 @@ width: 100%;
 
 .navbar-brand {
     font-size: 2em; /* adjust this value as needed */
-    z-index: 3;
     color: #ececec;
     /* display: flex;
     align-items: center; */
@@ -138,12 +137,15 @@ width: 100%;
     margin: 5px;
     color: #ececec; /* This will make the text color the same as the parent element */
     text-decoration: none; /* This will remove the underline */
+    z-index: 3;
 }
 
-body > *:not(nav):not(#menu) {
+main-content {
     transition: filter 0.5s ease;
 }
 
-body.blur > *:not(nav):not(#menu) {
+body.blur main-content {
     filter: blur(10px);
+    z-index: 2;
 }
+

@@ -10,7 +10,7 @@ Called by js/text-scramble.js to scramble the text on load for index.html
     justify-content: center;
     padding: 20px;
     font-family: var(--main-font) !important;
-    color: #ffffff;
+    color: #ececec;
     font-size: 5em;
     margin-bottom: 30px;
     text-shadow: 0px 0px 20px #000000;

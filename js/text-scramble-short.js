@@ -117,3 +117,18 @@ buttonsc.addEventListener('click', () => {
     textElement.setAttribute('data-text', isMenuOpen ? menuTexts[index] : "");
   });
 });
+
+// TODO: MOVE THIS TO A SEPARATE FILE!!!
+// Assume 'hamburger' is the hamburger icon element
+var hamburger = document.querySelector('.hamburger');
+
+document.addEventListener('keydown', function(event) {
+    // Check if the Escape key was pressed
+    if (event.key === 'Escape') {
+        // Check if the hamburger is active
+        if (hamburger.classList.contains('is-active')) {
+            // Simulate a click on the hamburger to close the menu
+            hamburger.click();
+        }
+    }
+});
