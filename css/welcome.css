@@ -16,19 +16,21 @@
 
 .main-content {
     position: relative;
-    background: url(../img/pexels-matt-hardy-1870259.jpg) no-repeat center center fixed; 
+    background: url(../img/pexels-matt-hardy-1870259.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    width: 100%;
-    height: 500px;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
     z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: medium;
 }
+
 /* 
 Overlay for the fade in when switching onto the page
 */
@@ -45,12 +47,17 @@ Overlay for the fade in when switching onto the page
 }
 
 @keyframes fadeOut {
-    from {background-color: var(--background-color);}
-    to {background-color: transparent;}
+    from {
+        background-color: var(--background-color);
+    }
+
+    to {
+        background-color: transparent;
+    }
 }
 
-.background-container { 
-    background: url(../img/pexels-matt-hardy-1870259.jpg) no-repeat center center fixed; 
+.background-container {
+    background: url(../img/pexels-matt-hardy-1870259.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -58,15 +65,16 @@ Overlay for the fade in when switching onto the page
     height: 100vh;
     width: 100vw;
     z-index: 1;
-  }
+}
 
-  @keyframes fadeInUp {
+@keyframes fadeInUp {
     0% {
-        transform: translateY(-25%);
+        transform: translateY(-50%);
     }
+
     100% {
         opacity: 1;
-        transform: translateY(-75%);
+        transform: translateY(-150%);
     }
 }
 
@@ -74,14 +82,74 @@ Overlay for the fade in when switching onto the page
     position: absolute;
     font-family: var(--main-font);
     color: #ececec;
-    font-size: 3em;
+    font-size: 3vw;
     text-wrap: wrap;
-    text-justify: center;
+    text-justify: left;
     animation: fadeInUp .5s ease-in-out forwards;
-    animation-delay: 1s;
+    animation-delay: 0.5s;
     z-index: 2;
     opacity: 0;
-    left: 60%; /* Add this line */
+    left: 60%;
+    /* Add this line */
+    /* transform: translateX(-50%); */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+@keyframes fadeInDown {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(50%);
+    }
+}
+
+.animated-subtitle {
+    position: absolute;
+    font-family: var(--main-font);
+    color: #ececec;
+    font-size: 1.5vw;
+    text-wrap: wrap;
+    text-justify: left;
+    animation: fadeInDown .5s ease-in-out forwards;
+    animation-delay: 0.75s;
+    z-index: 2;
+    opacity: 0;
+    left: 60%;
+    /* Add this line */
     transform: translateX(-50%);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 700px; /* Adjust as needed for the maximum width of the text container */
+    margin: auto;
+    top: 50vh;
+}
+
+.line {
+    position: absolute;
+    width: 35%; /* Adjust as needed for the length of the line */
+    height: 2px; /* Adjust as needed for the thickness of the line */
+    background: #ececec; /* Adjust as needed for the color of the line */
+    margin: 0 auto; /* Center the line horizontally */
+    opacity: 0; /* Start out invisible */
+    animation: fadeIn .5s ease-in forwards; /* Fade in at 1 second */
+    animation-delay: 1s; /* Start the animation at 1 second */
+    left: 60%;
+    top: 50vh;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    transform: translate(0%, -50%);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

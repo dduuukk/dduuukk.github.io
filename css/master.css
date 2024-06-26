@@ -178,6 +178,6 @@ z-index: 21;
 
 body.blur .main-content {
     filter: blur(10px);
-    z-index: 2;
+    /* z-index: 2; */
 }
 
