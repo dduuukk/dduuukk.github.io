@@ -92,14 +92,44 @@ width: 100%;
     align-items: center; */
     z-index: 20;
     background-color: var(--background-color);
+    
 }
 
-.navbar-brand {
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar-brand-custom {
     font-size: 2em; /* adjust this value as needed */
     color: #ececec;
     /* display: flex;
     align-items: center; */
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
 }
+
+.navbar-brand-custom::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0px; /* Done because of absolute positioning and padding needed in scrambler*/
+    color: #ffffff;
+    /* Hover color */
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    text-shadow: 0px 0px 4px #ffffff ;
+    transition: width .5s ease-out;
+    z-index: 21;
+}
+  
+.navbar-brand-custom:hover::before {
+width: 100%;
+z-index: 21;
+}
+
+
 
 #menu {
     position: fixed;
