@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 @import url(master.css);
 
-
 .body-custom {
     background-color: #0e1416;
     /* background: url(../img/pexels-matt-hardy-1870259.jpg) no-repeat center center fixed;  */
@@ -12,43 +11,6 @@
     width: 100vw;
     overflow: hidden;
     position: relative;
-}
-
-
-/* 
-Overlay for the fade in when switching onto the page
-*/
-.switch-overlay {
-    position: absolute;
-    top: 0;
-    overflow: hidden;
-    background-color: var(--background-color);
-    width: 100vw;
-    height: 100vh;
-    z-index: 30;
-    pointer-events: none;
-    animation: fadeOut 0.5s ease-out forwards;
-}
-
-@keyframes fadeOut {
-    from {
-        background-color: var(--background-color);
-    }
-
-    to {
-        background-color: transparent;
-    }
-}
-
-.background-container {
-    background: url(../img/pexels-matt-hardy-1870259.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    z-index: 1;
 }
 
 @keyframes fadeInUp {
@@ -66,7 +28,7 @@ Overlay for the fade in when switching onto the page
     position: absolute;
     font-family: var(--main-font);
     color: #ececec;
-    font-size: 30px;
+    font-size: 3.5vw;
     text-wrap: wrap;
     text-justify: left;
     animation: fadeInUp .5s ease-in-out forwards;
@@ -83,12 +45,12 @@ Overlay for the fade in when switching onto the page
 
 @keyframes fadeInDown {
     0% {
-        transform: translateY(-50%);
+        transform: translateY(50%);
     }
 
     100% {
         opacity: 1;
-        transform: translateY(50%);
+        transform: translateY(0%);
     }
 }
 
@@ -96,25 +58,25 @@ Overlay for the fade in when switching onto the page
     position: absolute;
     font-family: var(--main-font);
     color: #ececec;
-    font-size: 15px;
+    font-size: 1.5vw;
     text-wrap: wrap;
     text-justify: left;
-    animation: fadeInDown .5s ease-in-out forwards;
-    animation-delay: 0.75s;
+    /* animation: fadeInDown .5s ease-in-out forwards;
+    animation-delay: 0.75s; */
     z-index: 2;
-    opacity: 0;
-    left: 60%;
-    /* Add this line */
-    transform: translateX(-50%);
+    opacity: 100;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    max-width: 600px; /* Adjust as needed for the maximum width of the text container */
+    max-width: 700px; /* Adjust as needed for the maximum width of the text container */
     margin: auto;
-    top: 50vh;
+
 }
 
 .line {
     position: absolute;
-    width: 36%; /* Adjust as needed for the length of the line */
+    width: 35%; /* Adjust as needed for the length of the line */
     height: 2px; /* Adjust as needed for the thickness of the line */
     background: #ececec; /* Adjust as needed for the color of the line */
     margin: 0 auto; /* Center the line horizontally */
