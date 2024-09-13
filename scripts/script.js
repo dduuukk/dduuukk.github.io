@@ -170,10 +170,78 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Home animation
 
-// main.js
+// script.js
+
 document.addEventListener('DOMContentLoaded', () => {
-    var scene = document.getElementById('scene');
+    const scene = document.getElementById('scene');
+    const longText = `Your long string of text goes here...
+    alsikduhfpioaushfkjashfkjawsehfkjahsefasef
+    asefaf
+    asdf
+    aef aesfdasef asefasfasefa asf asef ase fasef 
+    saef as
+    ef asef asef saefasefasefasefagsdfhfsghfghfsghfg hdfgh fdgh dh 
+    dh dfgh dfghthsrgrgargfsdrg`;
+
+    const layers = [0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 0.8, 0.9];
+    const textBlocks = breakTextIntoBlocks(longText);
+
+    layers.forEach(layer => {
+        const layerElement = document.createElement('li');
+        layerElement.classList.add('layer');
+        layerElement.setAttribute('data-depth', layer);
+
+        textBlocks.forEach(block => {
+            const textBlock = document.createElement('div');
+            textBlock.classList.add('text-block');
+            textBlock.textContent = block;
+            setRandomStyles(textBlock, layer);
+            layerElement.appendChild(textBlock);
+        });
+
+        scene.appendChild(layerElement);
+    });
+
     var parallaxInstance = new Parallax(scene, {
-        relativeInput: true
+        relativeInput: true,
+        hoverOnly: true,
+        scalarX: 7,
+        scalarY: 3
+        // TODO: Hone in the settings here
     });
 });
+
+function breakTextIntoBlocks(text) {
+    const words = text.split(' ');
+    const blocks = [];
+    let block = '';
+
+    words.forEach(word => {
+        if (block.length + word.length < 50) {
+            block += word + ' ';
+        } else {
+            blocks.push(block.trim());
+            block = word + ' ';
+        }
+    });
+
+    if (block.length > 0) {
+        blocks.push(block.trim());
+    }
+
+    return blocks;
+}
+
+function setRandomStyles(element, layer) {
+    const size = 0.5 + layer * 1.5; // Scale size based on layer
+    const opacity = layer; // Opacity based on layer
+    const verticalPosition = Math.random() * 100; // Random vertical position between 0% and 100%
+    const animationDuration = 5 + (1 - layer) * 10; // Faster scrolling for closer layers
+    const animationDelay = Math.random() * 5; // Random animation delay between 0 and 5 seconds
+
+    element.style.fontSize = `${size}rem`;
+    element.style.top = `${verticalPosition}vh`; // Set random vertical position
+    element.style.opacity = opacity;
+    element.style.animation = `move ${animationDuration}s linear infinite`;
+    element.style.animationDelay = `${animationDelay}s`; // Set random animation delay
+}
