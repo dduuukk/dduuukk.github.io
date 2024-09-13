@@ -16,9 +16,10 @@
 <body>
     <!-- NAV MENU -->
     <div class="container">
-        <nav id="header">
+        <header class="header" id="header">
             <div class="nav-logo">
-                <p class="nav-name">Logo</p>
+                <!-- <p class="nav-name">CVSB</p> -->
+                <i class="bi bi-cpu"></i>
             </div>
             <div class="nav-menu" id="myNavMenu">
                 <ul class="nav-menu-list">
@@ -51,14 +52,86 @@
                 <!-- TODO: Replace this with an animated burger icon -->
                 <i class="bi bi-list" onclick="myMenuFunction()"></i>
             </div>
-        </nav>
+            <!-- <button class="visit-btn">Visit Github</button> -->
+        </header>
+
+        <!-- <nav id="header"></nav>
+            <div class="nav-logo">
+                <p class="nav-name">Logo</p>
+            </div>
+            <div class="nav-menu" id="myNavMenu">
+                <ul class="nav-menu-list">
+                    <li class="nav-list">
+                        <a href="#home" class="nav-link active-link">Home</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#about" class="nav-link">About</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#projects" class="nav-link">Projects</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#contact" class="nav-link">Contact</a>
+                        <div class="circle"></div>
+                    </li>
+                </ul>
+            </div>
+            Dark mode switch
+            <div class="mode">
+                <div class="mode-indicator" id="toggle-switch">
+                    <i class="bi bi-sun-fill" id="sun"></i>
+                    <i class="bi bi-moon-fill" id="moon"></i>
+                </div>
+            </div>
+            <div class="nav-menu-btn">
+                TODO: Replace this with an animated burger icon
+                <i class="bi bi-list" onclick="myMenuFunction()"></i>
+            </div>
+        </nav> -->
 
 
         <!-- MAIN CONTENT -->
         <!-- Featured content section -->
         <main class="wrapper">
             <section class="featured-box" id="home">
-                <div class="featured-text">
+                
+                <ul id="scene" class="scene unselectable" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15">
+                    <li class="layer" data-depth="0.60">
+                        <div class="text-block">
+                            AYOOO WHATS UP PLAYER
+                        </div>
+                    </li>
+                    <li class="layer" data-depth="0.40">
+                        <div class="text-block">
+                            Embedded Engineer
+                        </div>
+                    </li>
+                    <li class="layer" data-depth="0.20">
+                        <div class="text-block">
+                            My name is Christian! I am an embedded engineer who recently graduated from Northeastern
+                        </div>
+                    </li>
+                    <li class="layer" data-depth="0.10">
+                        <div class="text-block">
+                            Contact Info
+                        </div>
+                    </li>
+                    <li class="layer" data-depth="0.05">
+                        <div class="text-block">
+                            C
+                        </div>
+                    </li>
+                    <li class="layer" data-depth="0.02">
+                        <div class="text-block">
+                            85%
+                        </div>
+                    </li>
+                </ul>
+                
+                <!-- <div class="featured-text">
                     <div class="featured-hello">
                         <p>Hello, I'm</p>
                     </div>
@@ -82,10 +155,10 @@
                 </div>
                 <div class="featured-image">
                     <div class="image">
-                        <!-- TODO: Replace this image with an image of me -->
+                        TODO: Replace this image with an image of me
                         <img src="./src/crash_bandicoot_4.png" alt="">
                     </div>
-                </div>
+                </div> -->
             </section>
 
             <!-- About section -->
@@ -247,6 +320,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <script src="./scripts/script.js"></script>
 </body>
 
