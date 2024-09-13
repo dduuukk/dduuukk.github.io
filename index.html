@@ -1,43 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cvsb.com</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body class = "overlay">
-        <div class="grid">
-            <div class="grid-lines"></div>
-            <div class="grid-lines-right"></div>
-            <div class="grid-fade"></div>
-        </div>
-    
-        
 
-    <div class="text-center-custom">
-        <div id="scrambler" class="scrambler" style="min-height: 2em;">
-            <h1></h1>
-        </div>
-        
-    <button class="btn btn-custom">enter</button>
-        
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Portfolio (CHANGE THIS)</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./styles/master-style.css">
+</head>
+
+<body>
+    <!-- NAV MENU -->
+    <div class="container">
+        <nav id="header">
+            <div class="nav-logo">
+                <p class="nav-name">Logo</p>
+            </div>
+            <div class="nav-menu" id="myNavMenu">
+                <ul class="nav-menu-list">
+                    <li class="nav-list">
+                        <a href="#home" class="nav-link active-link">Home</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#about" class="nav-link">About</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#projects" class="nav-link">Projects</a>
+                        <div class="circle"></div>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#contact" class="nav-link">Contact</a>
+                        <div class="circle"></div>
+                    </li>
+                </ul>
+            </div>
+            <!-- Dark mode switch -->
+            <div class="mode">
+                <div class="mode-indicator" id="toggle-switch">
+                    <i class="bi bi-sun-fill" id="sun"></i>
+                    <i class="bi bi-moon-fill" id="moon"></i>
+                </div>
+            </div>
+            <div class="nav-menu-btn">
+                <!-- TODO: Replace this with an animated burger icon -->
+                <i class="bi bi-list" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+
+
+        <!-- MAIN CONTENT -->
+        <!-- Featured content section -->
+        <main class="wrapper">
+            <section class="featured-box" id="home">
+                <div class="featured-text">
+                    <div class="featured-hello">
+                        <p>Hello, I'm</p>
+                    </div>
+                    <div class="featured-fx-text">
+                        <span class="fx-text"></span>
+                    </div>
+                    <div class="info-text">
+                        <p>My name is Christian! I am an embedded engineer who recently graduated from Northeastern</p>
+                    </div>
+                    <div class="text-btn">
+                        <button class="btn hire-button">Contact Info</button>
+                        <button class="btn">Download Resume / CV <i class="bi bi-file-arrow-down"></i></button>
+                    </div>
+                    <div class="social-icons">
+                        <div class="icon-circle"></div>
+                        <div class="icon"><i class="bi bi-linkedin"></i></div>
+                        <div class="icon"><i class="bi bi-github"></i></div>
+                        <div class="icon"><i class="bi bi-instagram"></i></div>
+                        <div class="icon"><i class="bi bi-twitter"></i></div>
+                    </div>
+                </div>
+                <div class="featured-image">
+                    <div class="image">
+                        <!-- TODO: Replace this image with an image of me -->
+                        <img src="./src/crash_bandicoot_4.png" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <!-- About section -->
+            <section class="section" id="about">
+                <div class="top-header">
+                    <h1>About me</h1>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="about-info">
+                            <figure class="about-me">
+                                <figcaption>
+                                    <img src="./src/crash_bandicoot_4.png" alt="" class="profile">
+                                    <h2>Embedded Engineer</h2>
+                                    <p>My name is Christian! I am an embedded engineer who recently graduated from Northeastern</p>
+                                </figcaption>
+                            </figure>
+                            <button class="about-me-btn">Contact Info</button>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-box">
+                            <span class="title">C</span>
+                            <div class="skill-bar">
+                                <span class="skill-percent c">
+                                    <span class="tooltip">85%</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="skill-box">
+                            <span class="title">C++</span>
+                            <div class="skill-bar">
+                                <span class="skill-percent cpp">
+                                    <span class="tooltip">90%</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="skill-box">
+                            <span class="title">Embedded Linux</span>
+                            <div class="skill-bar">
+                                <span class="skill-percent linux">
+                                    <span class="tooltip">70%</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="skill-box">
+                            <span class="title">Hardware design</span>
+                            <div class="skill-bar">
+                                <span class="skill-percent hardware">
+                                    <span class="tooltip">50%</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects section -->
+            <section class="section" id="projects">
+                <div class="top-header">
+                    <h1>Projects</h1>
+                </div>
+                <!-- TODO: Add the ability to expand the project boxes and give more info -->
+                <div class="project-container">
+                    <div class="project-box">
+                        <i class="bi bi-briefcase-fill"></i>
+                        <h3>Project Name</h3>
+                        <label>Some description</label>
+                    </div>
+                    <div class="project-box">
+                        <i class="bi bi-briefcase-fill"></i>
+                        <h3>Project Name</h3>
+                        <label>Some description</label>
+                    </div>
+                    <div class="project-box">
+                        <i class="bi bi-briefcase-fill"></i>
+                        <h3>Project Name</h3>
+                        <label>Some description</label>
+                    </div>
+                    <div class="project-box">
+                        <i class="bi bi-briefcase-fill"></i>
+                        <h3>Project Name</h3>
+                        <label>Some description</label>
+                    </div>
+                    <div class="project-box">
+                        <i class="bi bi-briefcase-fill"></i>
+                        <h3>Project Name</h3>
+                        <label>Some description</label>
+                    </div>
+                    <div class="project-box">
+                        <i class="bi bi-briefcase-fill"></i>
+                        <h3>Project Name</h3>
+                        <label>Some description</label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact section -->
+            <section class="section" id="contact">
+                <div class="top-header">
+                    <h1>Let's Work Together</h1>
+                    <span>Contact me here</span>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="contact-info">
+                            <h2>Find me<i class="bi bi-arrow-down"></i></h2>
+                            <p><i class="bi bi-envelope">some-email@email.com</i></p>
+                            <p><i class="bi bi-phone">+1(234)5678910</i></p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="contact-form">
+                            <div class="form-inputs">
+                                <input type="text" class="input-field" placeholder="Your Name">
+                                <input type="text" class="input-field" placeholder="Your Email">
+                            </div>
+                            <div class="message-body">
+                                <input type="text" class="input-subject" placeholder="Subject">
+                                <textarea name="" id="" placeholder="Message"></textarea>
+                            </div>
+                            <div class="form-button">
+                                <button class="btn">Send<i class="bi bi-chat"></i></button>
+                            </div>
+                        </div>
+                </div>
+            </section>
+
+            <!-- Footer section -->
+            <footer>
+                <div class="middle-footer">
+                    <ul class="footer-menu">
+                        <li class="footer-menu-list">
+                            <a href="#home">Home</a>
+                        </li>
+                        <li class="footer-menu-list">
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="footer-menu-list">
+                            <a href="#projects">Projects</a>
+                        </li>
+                        <li class="footer-menu-list">
+                            <a href="#contact">contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-social-icons">
+                    <div class="icon"><i class="bi bi-linkedin"></i></div>
+                    <div class="icon"><i class="bi bi-github"></i></div>
+                    <div class="icon"><i class="bi bi-instagram"></i></div>
+                    <div class="icon"><i class="bi bi-twitter"></i></div>
+                </div>
+                <div class="bottom-footer">
+                    <p>Copyright &copy; <a href="#home" style="text-decoration: none;">Christian Bender</a> - All rights reserved 2024</p>
+                </div>
+            </footer>
+
+        </main>
     </div>
 
-    <div class="button-overlay"></div>
-
-
-
-    <!-- Custom Scripts -->
-    <script src="js/index.js"></script>
-    <script src="js/index-button.js"></script>
-
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.js"></script>
+    <script src="./scripts/script.js"></script>
 </body>
+
 </html>
