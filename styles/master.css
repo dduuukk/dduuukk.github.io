@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+/* For inspo: http://findmatthew.com/ */
+
+/* -------- MASTER STYLES --------------------------------- */
+
+/* Reset defualt browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: JetBrains Mono, monospace;
+}
+
+/* Light mode root variables */
+:root {
+    --body-color: rgba(250, 250, 250, 1);
+    --color-white: rgba(255, 255, 255, 1);
+    --text-color-secondary: rgba(38, 37, 37, 1);
+    --first-color: rgba(110, 87, 224, 1);
+    --first-shadow: rgba(0, 0, 0, 0.1);
+
+    --box-color: rgba(255, 255, 255, 1);
+    --nav-color: rgba(255, 255, 255, 1);
+    --nav-icon: rgba(0, 0, 0, 1);
+    --logo-color: rgba(0, 0, 0, 1);
+
+    --text-color: rgba(68, 68, 68, 1);
+    --color-white: rgba(36, 37, 38, 1);
+
+    --icon-color: rgba(36, 37, 38, 1);
+    --mode-color: rgba(204, 204, 204, 1);
+}
+
+/* Dark mode root variable */
+body.dark {
+    --body-color: rgba(32, 36, 37, 1);
+
+    --text-color: rgba(255, 255, 255, 1);
+    --text-color-secondary: rgba(204, 204, 204, 1);
+
+    --highlight-color: #aa7be0;
+
+    --box-color: rgba(255, 255, 255, 1);
+    --nav-color: rgba(38, 36, 37, 1);
+    --nav-icon: rgba(255, 255, 255, 1);
+    --logo-color: rgba(255, 255, 255, 1);
+
+    --color-white: rgba(255, 255, 255, 1);
+
+    --icon-color: rgba(135, 73, 242, 1);
+    --mode-color: rgba(255, 255, 255, 1);
+}
+
+
+/* Set background color for entire page */
+body {
+    background: var(--body-color);
+}
+
+/* Wrapping container for entire HTML */
+.container {
+    width: 100%;
+    position: relative;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Main class wrapper */
+.wrapper {
+    /* Commented for featured background */
+    /* Must apply 5vw to every section indivdually for now */
+    /* padding-inline: 5vw; */
+}

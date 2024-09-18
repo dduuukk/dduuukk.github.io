@@ -1,0 +1,182 @@
+@import url(master.css);
+
+/* -------- HOME SCREEN ----------------------------------- */
+
+/* -------- Featured wrapper */
+.featured-box {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+}
+
+/* Background Animation */
+#scene {
+    min-height: 460px;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.scene,
+.layer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0; 
+    position: relative;
+}
+
+.layer {
+    position: relative;
+    z-index: 1;}
+    .layer div {
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden; 
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* TODO: Make a seperate wrapper to give the text a floating effect */
+.text-block {
+    position: absolute;
+    display: block;
+    white-space: pre-wrap; /* Preserve new lines and spaces */
+    font-size: 2rem;
+    transform-style: preserve-3d;
+    animation: move 10s linear infinite, float-vertical 3s ease-in-out infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+        transform: translate3d(100vw, 0, 0);
+    }
+}
+
+@keyframes float-vertical {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-300px); /* Adjust the value as needed */
+    }
+}
+
+/* Featured Information */
+
+
+.featured-container {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    z-index: 2;
+    padding: 5em;
+}
+
+.featured-box img {
+    width: 30vw;
+    border-radius: 30px;
+    border: solid 2px white;
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* .info-text {
+    justify-content: center;
+    align-items: center;
+} */
+
+.info-box h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.info-box h1 {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.info-box span {
+    font-size: 2rem;
+    color: transparent;
+    background: linear-gradient(45deg, #aa7be0, #ffffff);
+    background-clip: text;
+}
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+}
+.btn-group .btn {
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: 2px solid white;
+    cursor: pointer;
+    text-wrap: nowrap;
+    transition: background .2s ease-out, color .2s ease-out;
+    background: var(--body-color);
+    color: white;
+}
+
+.btn-group .btn:hover {
+    /* transform: scale(1.1); */
+    color: black;
+    background: var(--text-color);
+}
+
+/* Social Icons */
+
+.socials {
+    display: flex;
+    gap: 2rem;
+}
+
+.socials i {
+    font-size: 2rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: transform .2s ease-in-out;
+}
+
+.socials i:hover {
+    transform: scale(1.1);
+    /* color: #aa7be0; */
+}

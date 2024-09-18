@@ -1,82 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url(master.css);
 
-/* For inspo: http://findmatthew.com/ */
+/* -------- NAVIGATION ------------------------------------ */
 
-/* Reset defual browser styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: JetBrains Mono, monospace;
-}
-
-/* Set high level coloring and attributes */
-:root {
-    --body-color: rgba(250, 250, 250, 1);
-    --color-white: rgba(255, 255, 255, 1);
-    --text-color-secondary: rgba(38, 37, 37, 1);
-    --first-color: rgba(110, 87, 224, 1);
-    --first-shadow: rgba(0, 0, 0, 0.1);
-
-    --box-color: rgba(255, 255, 255, 1);
-    --nav-color: rgba(255, 255, 255, 1);
-    --nav-icon: rgba(0, 0, 0, 1);
-    --logo-color: rgba(0, 0, 0, 1);
-
-    --text-color: rgba(68, 68, 68, 1);
-    --color-white: rgba(36, 37, 38, 1);
-
-    --icon-color: rgba(36, 37, 38, 1);
-    --mode-color: rgba(204, 204, 204, 1);
-}
-
-/* Set background color for entire page */
-body {
-    background: var(--body-color);
-}
-
-/* ---- DARK MODE ---- */
-body.dark {
-    --body-color: rgba(32, 36, 37, 1);
-    --text-color-secondary: rgba(204, 204, 204, 1);
-    /* --first-color: rgba(255, 255, 255, 1);
-    --first-shadow: rgba(0, 0, 0, 0.1); */
-
-    --box-color: rgba(255, 255, 255, 1);
-    --nav-color: rgba(38, 36, 37, 1);
-    --nav-icon: rgba(255, 255, 255, 1);
-    --logo-color: rgba(255, 255, 255, 1);
-
-    --text-color: rgba(255, 255, 255, 1);
-    --color-white: rgba(255, 255, 255, 1);
-
-    --icon-color: rgba(135, 73, 242, 1);
-    --mode-color: rgba(255, 255, 255, 1);
-}
-
-.container {
-    width: 100%;
-    position: relative;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-/* ---- NAVIGATION ---- */
-/* nav {
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 90px;
-    line-height: 100px;
-    background-color: var(--nav-color);
-    padding-inline: 10vw;
-    transition: 0.3s;
-    z-index: 100;
-} */
-
+/* Nav Bar */
+/* TODO: Fix this header color, corner radius, logo, etc. */
 header {
     position: fixed;
     top: 1rem;
@@ -97,9 +24,12 @@ header {
     width: auto;
 }
 
+
+/* -------- Logo (left of navbar) --------------- */
+/* TODO: Change the nav logo to text saying my name, not an icon */
 .nav-logo {
     position: relative;
-    color: white;
+    color: var(--text-color);
     transition: transform 0.3s ease-in-out;
     margin-left: 10px;
     margin-right: 50px;
@@ -114,12 +44,8 @@ header {
     transform: scale(1.1);
 }
 
-/* .nav-name {
-    font-size: 30px;
-    font-weight: 600;
-    color: var(--logo-color); */
-/* } */
 
+/* -------- Menu list (links) ------------------- */
 .nav-menu,
 .nav-menu-list {
     display: flex;
@@ -146,11 +72,11 @@ header {
 
 .active-link {
     position: relative;
-    color: var(--first-color);
+    color: #aa7be0;
     transition: color 0.3s ease;
 }
 
-/* This is for the underline, I don' think I reallu like the underline */
+/* This is for the underline, I don't think I reallu like the underline */
 /* .active-link::after {
     content: "";
     position: absolute;
@@ -188,6 +114,7 @@ header {
 }
 
 /* Dark mode */
+/* TODO: Decide if I want to implement dark mode */
 
 .mode {
     display: flex;
@@ -225,256 +152,29 @@ body.dark #moon {
     opacity: 0;
 }
 
-/* ---- MAIN CLASS WRAPPER ---- */
-.wrapper {
-    /* padding-inline: 5vw; */
-}
-
-/* ---- FEATURED BOX ---- */
-.featured-box {
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    height: 100vh;
-    min-height: 700px;
-}
-
-#scene {
-    min-height: 460px;
-    position: relative;
-    overflow: hidden; }
-
-#scene::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 200px; /* Adjust the height as needed */
-    background: linear-gradient(to bottom, transparent, var(--body-color));
-    pointer-events: none; /* Ensure it doesn't interfere with interactions */
-}
-
-.scene,
-.layer {
-    display: block;
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0; 
-}
 
 
-.layer {
-    position: relative; }
-    .layer div {
-    -webkit-transform: translate3d(0,0,0);
-    -moz-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    backface-visibility: hidden; 
-}
 
 
-ul {
-    list-style: none;
-    display: block;
-    padding: 0;
-    margin: 0; 
-}
-
-/* .lighthouse {
-    -webkit-transform-origin: 50% 90%;
-    -moz-transform-origin: 50% 90%;
-    transform-origin: 50% 90%;
-    -webkit-animation: lighthouse 4s 0.1s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    -moz-animation: lighthouse 4s 0.1s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    animation: lighthouse 4s 0.1s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    margin: 0px -64px;
-    background-size: 128px 224px;
-    height: 224px;
-    width: 128px;
-    background-repeat: no-repeat;
-    bottom: 64px;
-    position: absolute;
-    right: 20%; }
-
-@-webkit-keyframes lighthouse {0% { -webkit-transform: translate3d(15%,0,0) rotateZ(10deg); -moz-transform: translate3d(15%,0,0) rotateZ(10deg); transform: translate3d(15%,0,0) rotateZ(10deg); } 100% { -webkit-transform: translate3d(-15%,0,0) rotateZ(-10deg); -moz-transform: translate3d(-15%,0,0) rotateZ(-10deg); transform: translate3d(-15%,0,0) rotateZ(-10deg); } } @-moz-keyframes lighthouse { 0% { -webkit-transform: translate3d(15%,0,0) rotateZ(10deg); -moz-transform: translate3d(15%,0,0) rotateZ(10deg); transform: translate3d(15%,0,0) rotateZ(10deg); } 100% { -webkit-transform: translate3d(-15%,0,0) rotateZ(-10deg); -moz-transform: translate3d(-15%,0,0) rotateZ(-10deg); transform: translate3d(-15%,0,0) rotateZ(-10deg); } } @-ms-keyframes lighthouse { 0% { -webkit-transform: translate3d(15%,0,0) rotateZ(10deg); -moz-transform: translate3d(15%,0,0) rotateZ(10deg); transform: translate3d(15%,0,0) rotateZ(10deg); } 100% { -webkit-transform: translate3d(-15%,0,0) rotateZ(-10deg); -moz-transform: translate3d(-15%,0,0) rotateZ(-10deg); transform: translate3d(-15%,0,0) rotateZ(-10deg); } } @keyframes lighthouse { 0% { -webkit-transform: translate3d(15%,0,0) rotateZ(10deg); -moz-transform: translate3d(15%,0,0) rotateZ(10deg); transform: translate3d(15%,0,0) rotateZ(10deg); } 100% { -webkit-transform: translate3d(-15%,0,0) rotateZ(-10deg); -moz-transform: translate3d(-15%,0,0) rotateZ(-10deg); transform: translate3d(-15%,0,0) rotateZ(-10deg); } } */
-
-.text-block {
-    position: absolute;
-    display: block;
-    white-space: pre-wrap; /* Preserve new lines and spaces */
-    font-size: 2rem;
-    transform-style: preserve-3d;
-    animation: move 10s linear infinite;
-}
-
-@keyframes move {
-    0% {
-        transform: translate3d(-100%, 0, 0);
-    }
-    100% {
-        transform: translate3d(100vw, 0, 0);
-    }
-}
-
-.featured-text .featured-hello {
-    font-size: 50px;
-    font-weight: 500;
-    margin-bottom: -20px;
-    color: var(--text-color);
-}
-
-.featured-text .featured-fx-text {
-    font-size: 50px;
-    font-weight: 600;
-    margin-block-end: 20px;
-    color: val(--first-color);
-    margin-bottom: 10px;
-}
-
-.featured-text .fx-text {
-    font-size: 8px;
-    font-weight: 600;
-    text-transform: capitalize;
-    /* TODO: Find a different font for this */
-}
-
-.featured-text .info-text {
-    font-size: 16px;
-    margin-bottom: 30px;
-    color: var(--text-color);
-}
-
-.text-btn {
-    display: flex;
-    border-radius: 8px;
-    cursor: pointer;
-    gap: 20px;
-}
-
-.text-btn .btn {
-    border: none;
-    /* TODO: Make this a root variable! */
-    color: #f4f4f4; 
-    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
-}
-
-.btn {
-    text-decoration: none;
-    font-size: 15px;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 8px;
-    background: var(--first-color);
-    font-weight: 500;
-    transition: all 0.5s ease;
-}
-
-.btn i {
-    margin-right: 10px;
-}
-
-i {
-    font-size: 16px;
-}
-
-/* Social Icons */
-
-.social-icons {
-    display: flex;
-    margin-top: 30px;
-    margin-left: 5px;
-    gap: 32px;
-}
-
-.icon-circle {
-    position: absolute;
-    transform: transform(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    border-radius: 50px;
-    animation: iconSlide 4s infinite alternate;
-}
-
-@keyframes iconSlide {
-    /* TODO: Make all below colors root variables */
-    25% {
-        border: 2px solid #e6d12e;
-        left: 0px;
-    }
-    50% {
-        border: 2px solid #e6d12e;
-        left: 70px;
-    }
-    75% {
-        border: 2px solid #e6d12e;
-        left: 145px;
-    }
-    100% {
-        border: 2px solid #e6d12e;
-        left: 216px;
-    }
-}
-
-.social-icons .icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    color: var(--icon-color);
-    border-radius: 50%;
-    /* TODO: Make this a root variable! */
-    box-shadow: 0px 1px 5px 3px #8749f2;
-    cursor: pointer;
-}
-
-.social-icons:hover .icon-circle {
-    animation-play-state: paused;
-    cursor: pointer;
-}
-
-/* Featured Image */
-.featured-image {
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    min-height: 80vh;
-    width: 100%;
-}
-
-.image {
-    margin-top: 10%;
-    width: 500px;
-    height: 700px;
-    border-radius: 20% 20% 20% 20%;
-    overflow: hidden;
-    animation: imgFloat 5s ease-in-out infinite;
-}
-
-@keyframes imgFloat {
-    50% {
-        transform: translateY(50px);
-    }
-}
-
-.image img {
-    width: 500px;
-    height: 700px;
-    object-fit: cover;
-}
 
 /* ---- MAIN BODY ---- */
 .section {
     padding-block: 5em;
     min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
 
+#about {
+    padding-inline: 5em;
+}
+
+#projects {
+    padding-inline: 5em;
+}
+
+#contact {
+    padding-inline: 5em;
 }
 
 .row {
