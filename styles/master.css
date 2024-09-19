@@ -75,3 +75,23 @@ html {
     /* Must apply 5vw to every section indivdually for now */
     /* padding-inline: 5vw; */
 }
+
+/* Main body */
+.section {
+    padding-block: 5em;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+#about {
+    padding-inline: 5vw;
+}
+
+#projects {
+    padding-inline: 5vw;
+}
+
+#contact {
+    padding-inline: 5vw;
+}

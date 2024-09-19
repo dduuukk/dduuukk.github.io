@@ -2,8 +2,8 @@
 
 /* -------- HOME SCREEN ----------------------------------- */
 
-/* -------- Featured wrapper */
-.featured-box {
+/* -------- Featured section wrapper ------------ */
+.featured-wrapper {
     display: flex;
     position: relative;
     justify-content: center;
@@ -14,7 +14,8 @@
     min-height: 700px;
 }
 
-/* Background Animation */
+
+/* -------- Home background (parallax) ---------- */
 #scene {
     min-height: 460px;
     position: relative;
@@ -88,9 +89,8 @@ ul {
     }
 }
 
-/* Featured Information */
 
-
+/* -------- Featured content -------------------- */
 .featured-container {
     position: absolute;
     display: flex;
@@ -102,12 +102,14 @@ ul {
     padding: 5em;
 }
 
-.featured-box img {
+/* -------- Featured image ----------------- */
+.featured-wrapper img {
     width: 30vw;
     border-radius: 30px;
     border: solid 2px white;
 }
 
+/* -------- Featured info box -------------- */
 .info-box {
     display: flex;
     flex-direction: column;
@@ -117,11 +119,7 @@ ul {
     text-align: center;
 }
 
-/* .info-text {
-    justify-content: center;
-    align-items: center;
-} */
-
+/* -------- Featured text --------- */
 .info-box h3 {
     font-size: 1.8rem;
     font-weight: 400;
@@ -141,6 +139,7 @@ ul {
     background-clip: text;
 }
 
+/* -------- Featured buttons ------ */
 .btn-group {
     display: flex;
     gap: 1rem;
@@ -162,8 +161,7 @@ ul {
     background: var(--text-color);
 }
 
-/* Social Icons */
-
+/* -------- Featured socials ------ */
 .socials {
     display: flex;
     gap: 2rem;
