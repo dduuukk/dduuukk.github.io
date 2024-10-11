@@ -1,0 +1,202 @@
+@import url(master.css);
+/* ---- Projects Section ---- */
+.project-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    height: 250px;
+    background: transparent;
+    /* TODO: Make this a root variable */
+    border: 2px solid #fff;
+    border-radius: 20px;
+    box-shadow: 1px 8px 10px 2px var(--first-shadow);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* TODO: Replace these icons with images! Cool */
+.project-box > i {
+    font-size: 50px;
+    /* TODO: Make this a root variable */
+    color: #8749f2;
+    margin-bottom: 25px;
+    z-index: 1; /* Ensure the icon is above the ::after element */
+}
+
+.project-box label {
+    font-size: 15px;
+    color: var(--text-color);
+    z-index: 1; /* Ensure the label is above the ::after element */
+}
+
+.project-box::after,
+.contact-info::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #8749f2;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.75s ease; /* Transition for fading effect */
+    z-index: 0; /* Ensure the ::after element is below the content */
+}
+
+.project-box:hover::after,
+.contact-info:hover::after {
+    opacity: 1; /* Fade in on hover */
+}
+
+.project-box:hover > i,
+.project-box:hover > h3,
+.project-box:hover > label {
+    /* TODO: Make this a root variable */
+    color: #fff;
+    z-index: 2; /* Ensure the content is above the ::after element */
+}
+
+.top-header span {
+    color: var(--text-color);
+}
+
+
+/* New project section stuff */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    color: white;
+}
+
+.project-card {
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-color);
+    text-align: center;
+    gap: 20px;
+    border: 2px solid var(--box-color);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover {
+    background: var(--box-color);
+    color: var(--body-color);
+    transform: translateY(-10px)scale(1.02);
+}
+
+.project-card .image-container {
+    width: 20vw;
+    height: 300px;
+    /* border: 10px solid var(--highlight-color); */
+    background: linear-gradient(45deg, #5716a1, var(--highlight-color));
+    border-radius: 15px; /* Apply border radius to the container */
+    overflow: hidden; /* Ensure the image does not overflow the container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-card img {
+    width: 90%;
+    height: 90%;
+    border-radius: 10px; /* Apply border radius to the image */
+    object-fit: cover; /* Crop the image to fit the container */
+}
+
+.project-card .btn {
+    transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.project-card:hover .btn {
+    border: 2px solid var(--body-color);
+    color: var(--body-color);
+    background: white;
+}
+
+.project-card:hover .btn:hover {
+    background: var(--body-color);
+    color: white;
+}
+
+.project-card h3 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+
+/* Modal stuff */
+/* Modal container */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    display: flex; /* Use flexbox only when visible */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.0); /* Start with transparent */
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* Show modal */
+.modal.show {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5); /* Transition to black w/ opacity */
+}
+
+/* Modal content */
+.modal-content {
+    background: var(--body-color);
+    color: var(--text-color);
+    padding: 20px;
+    border: 2px solid white;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(-50px); /* Only transform vertically */
+    opacity: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Close button */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

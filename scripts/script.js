@@ -245,3 +245,70 @@ function setRandomStyles(element, layer) {
     element.style.animation = `move ${animationDuration}s linear infinite`;
     element.style.animationDelay = `${animationDelay}s`; // Set random animation delay
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('project-modal');
+    const modalContent = modal.querySelector('.modal-content');
+    const closeBtn = modal.querySelector('.close-btn');
+    const learnMoreBtns = document.querySelectorAll('.learn-more-btn');
+
+    learnMoreBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const project = btn.getAttribute('data-project');
+            openModal(project);
+        });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    function openModal(project) {
+        // Load project content dynamically (example content here)
+        const modalBody = modal.querySelector('.modal-body');
+        modalBody.innerHTML = `
+            <h2>${project}</h2>
+            <p>Detailed information about ${project}.</p>
+            <div class="image-slider">
+                <img src="project-1.png" alt="">
+                <!-- Add more images as needed -->
+            </div>
+        `;
+
+        modal.style.display = 'flex'; // Ensure the modal is displayed
+        setTimeout(() => {
+            modal.classList.add('show');
+            modalContent.style.transform = 'translateY(0)';
+            modalContent.style.opacity = '1';
+        }, 10); // Slight delay to trigger transition
+    }
+
+    function closeModal() {
+        modalContent.style.transform = 'translateY(-50px)';
+        modalContent.style.opacity = '0';
+        // setTimeout(() => {
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none'; // Hide the modal after transition
+            }, 300); // Match the transition duration
+        // }, 300); // Match the transition duration
+    }
+});

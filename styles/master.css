@@ -24,6 +24,7 @@
     --nav-color: rgba(255, 255, 255, 1);
     --nav-icon: rgba(0, 0, 0, 1);
     --logo-color: rgba(0, 0, 0, 1);
+    --image-bd-color: #aa7be0;
 
     --text-color: rgba(68, 68, 68, 1);
     --color-white: rgba(36, 37, 38, 1);
@@ -45,9 +46,10 @@ body.dark {
     --nav-color: rgba(38, 36, 37, 1);
     --nav-icon: rgba(255, 255, 255, 1);
     --logo-color: rgba(255, 255, 255, 1);
+    --image-bd-color: #aa7be0;
 
     --color-white: rgba(255, 255, 255, 1);
-
+    
     --icon-color: rgba(135, 73, 242, 1);
     --mode-color: rgba(255, 255, 255, 1);
 }
@@ -76,7 +78,7 @@ html {
     /* padding-inline: 5vw; */
 }
 
-/* Main body */
+/* Main body master styles */
 .section {
     padding-block: 5em;
     min-height: 100vh;
@@ -95,3 +97,29 @@ html {
 #contact {
     padding-inline: 5vw;
 }
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+}
+
+.col {
+    display: flex;
+    width: 50%;
+}
+
+/* TODO: Adjust these header styles to increase section title size */
+.top-header {
+    text-align: center;
+    margin-bottom: 5em;
+}
+
+.top-header h1 {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+/* TODO: Put this in contact! */

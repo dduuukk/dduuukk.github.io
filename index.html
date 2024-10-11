@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./styles/nav.css">
     <link rel="stylesheet" href="./styles/featured.css">
+    <link rel="stylesheet" href="./styles/about.css">
+    <link rel="stylesheet" href="./styles/project.css">
+    <link rel="stylesheet" href="./styles/contact.css">
 </head>
 
 <body>
@@ -77,7 +80,7 @@
                             </div>
                             
                             <div class="btn-group">
-                                <div class="btn" onclick="downloadResume()">Download Resume</div>
+                                <div class="btn" onclick="fillResumeRequest()">Request CV</div>
                                 <div class="btn" onclick="goToContact()">Contact</div>
                             </div>
 
@@ -106,7 +109,7 @@
                                     <p>My name is Christian! I am an embedded engineer who recently graduated from Northeastern</p>
                                 </figcaption>
                             </figure>
-                            <button class="about-me-btn">Contact Info</button>
+                            <button class="btn">Contact Info</button>
                         </div>
                     </div>
                     <div class="skill">
@@ -153,57 +156,129 @@
                 <div class="top-header">
                     <h1>Projects</h1>
                 </div>
-                <!-- TODO: Add the ability to expand the project boxes and give more info -->
-                <div class="project-container">
-                    <div class="project-box">
-                        <i class="bi bi-briefcase-fill"></i>
-                        <h3>Project Name</h3>
-                        <label>Some description</label>
-                    </div>
-                    <div class="project-box">
-                        <i class="bi bi-briefcase-fill"></i>
-                        <h3>Project Name</h3>
-                        <label>Some description</label>
-                    </div>
-                    <div class="project-box">
-                        <i class="bi bi-briefcase-fill"></i>
-                        <h3>Project Name</h3>
-                        <label>Some description</label>
-                    </div>
-                    <div class="project-box">
-                        <i class="bi bi-briefcase-fill"></i>
-                        <h3>Project Name</h3>
-                        <label>Some description</label>
-                    </div>
-                    <div class="project-box">
-                        <i class="bi bi-briefcase-fill"></i>
-                        <h3>Project Name</h3>
-                        <label>Some description</label>
-                    </div>
-                    <div class="project-box">
-                        <i class="bi bi-briefcase-fill"></i>
-                        <h3>Project Name</h3>
-                        <label>Some description</label>
-                    </div>
-                </div>
-            </section>
 
-
-
-            <!-- Contact section -->
-            <section class="section" id="contact">
-                <div class="top-header">
-                    <h1>Let's Work Together</h1>
-                    <span>Contact me here</span>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="contact-info">
-                            <h2>Find me<i class="bi bi-arrow-down"></i></h2>
-                            <p><i class="bi bi-envelope">some-email@email.com</i></p>
-                            <p><i class="bi bi-phone">+1(234)5678910</i></p>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="image-container">
+                            <img src="./assets/sample-player-main-image.png" alt="">
+                        </div>
+                        <h3>STM32 MIDI Sample Player</h3>
+                        <p> Bare-metal audio sample player with MIDI support on an STM32H7 development board.</p>
+                        <div class="btn-group">
+                            <div class="btn learn-more-btn">Learn More</div>
+                            <div class="btn">Github</div>
                         </div>
                     </div>
+
+                    <div class="project-card">
+                        <div class="image-container">
+                            <img src="project-1.png" alt="">
+                        </div>
+                        <h3>Plantware Firmware</h3>
+                        <p>C++ and Arduino based firmware for an ESP32-C6 based WiFi mesh network of plant sensors.</p>
+                        <div class="btn-group">
+                            <div class="btn learn-more-btn">Learn More</div>
+                            <div class="btn">Github</div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="image-container">
+                            <img src="project-1.png" alt="">
+                        </div>
+                        <h3>Project Z</h3>
+                        <p>Lorem, ipsome dolor sit amer consecteture adipisicing elit. Placet, officia</p>
+                        <div class="btn-group">
+                            <div class="btn learn-more-btn">Learn More</div>
+                            <div class="btn">Github</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="project-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-btn">&times;</span>
+                        <div class="modal-body">
+                            <!-- Content will be dynamically loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- TODO: Add the ability to expand the project boxes and give more info -->
+                <!-- <div class="project-container">
+                    <div class="project-box">
+                        <i class="bi bi-briefcase-fill"></i>
+                        <h3>Project Name</h3>
+                        <label>Some description</label>
+                    </div>
+                    <div class="project-box">
+                        <i class="bi bi-briefcase-fill"></i>
+                        <h3>Project Name</h3>
+                        <label>Some description</label>
+                    </div>
+                    <div class="project-box">
+                        <i class="bi bi-briefcase-fill"></i>
+                        <h3>Project Name</h3>
+                        <label>Some description</label>
+                    </div>
+                    <div class="project-box">
+                        <i class="bi bi-briefcase-fill"></i>
+                        <h3>Project Name</h3>
+                        <label>Some description</label>
+                    </div>
+                    <div class="project-box">
+                        <i class="bi bi-briefcase-fill"></i>
+                        <h3>Project Name</h3>
+                        <label>Some description</label>
+                    </div>
+                    <div class="project-box">
+                        <i class="bi bi-briefcase-fill"></i>
+                        <h3>Project Name</h3>
+                        <label>Some description</label>
+                    </div>
+                    </div> -->
+                    </section>
+                    
+                    
+                    
+                    <!-- Contact section -->
+                    <section class="section" id="contact">
+                        <div class="top-header">
+                            <h1>Let's Work Together</h1>
+                            <span>Contact me here</span>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                            <!-- Cal inline embed code begins -->
+                            <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline"></div>
+                                <script type="text/javascript">
+                                    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+                                    Cal("init", "30min", { origin: "https://cal.com" });
+
+                                    Cal.ns["30min"]("inline", {
+                                        elementOrSelector: "#my-cal-inline",
+                                        config: { "layout": "month_view" },
+                                        calLink: "christianbender/30min",
+                                    });
+
+                                    Cal.ns["30min"]("ui", {
+                                        cssVarsPerTheme: {
+                                            dark: {
+                                                "cal-border-booker": "#FFFFFF",
+                                                "cal-border-booker-width": "0px",
+                                                // "cal-border-booker-radius": "20px",
+                                                // "cal-bg-emphasis": "#202425", // Color for dates
+                                                "cal-bg": "#202425", // Color for times
+                                                "cal-bg-subtle": "#202425",
+                                                "cal-bg-muted": "#202425",
+                                            },
+                                        }
+                                    });
+                                </script>
+                            <!-- Cal inline embed code ends -->
+                        </div>
+
                     <div class="col">
                         <div class="contact-form">
                             <div class="form-inputs">
@@ -211,13 +286,14 @@
                                 <input type="text" class="input-field" placeholder="Your Email">
                             </div>
                             <div class="message-body">
-                                <input type="text" class="input-subject" placeholder="Subject">
-                                <textarea name="" id="" placeholder="Message"></textarea>
+                                <input type="text" id="subject-form" class="input-subject" placeholder="Subject">
+                                <textarea name="" id="message-content"  placeholder="Message"></textarea>
                             </div>
                             <div class="form-button">
                                 <button class="btn">Send<i class="bi bi-chat"></i></button>
                             </div>
                         </div>
+                    </div>
                 </div>
             </section>
 
