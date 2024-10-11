@@ -70,5 +70,19 @@ function openLinkedIn() {
     window.open('https://www.linkedin.com/in/chrisvsbender/', '_blank');
 }
 
+// Project 1 GitHub onClick
+function openProject1GitHub() {
+    window.open('https://github.com/dduuukk/embedded-audio-sample-player-with-midi-support', '_blank');
+}
+
+// Project 2 GitHub onClick
+function openProject2GitHub() {
+    window.open('https://github.com/plant-care-ecosystem/arduino-firmware/tree/dev', '_blank'); 
+}
+
+// Project 3 GitHub onClick
+function openProject3GitHub() {
+    window.open('https://github.com/dduuukk/Reversi-Fall-2023-Team-2-Public', '_blank');
+}
 
 // ---- ABOUT SECTION ----------------------------------

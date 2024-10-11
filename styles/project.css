@@ -105,7 +105,7 @@
     width: 20vw;
     height: 300px;
     /* border: 10px solid var(--highlight-color); */
-    background: linear-gradient(45deg, #5716a1, var(--highlight-color));
+    background: linear-gradient(20deg, #5407ad, var(--highlight-color));
     border-radius: 15px; /* Apply border radius to the container */
     overflow: hidden; /* Ensure the image does not overflow the container */
     display: flex;
@@ -171,7 +171,7 @@
     background: var(--body-color);
     color: var(--text-color);
     padding: 20px;
-    border: 2px solid white;
+    border: 3px solid white;
     width: 80%;
     max-width: 600px;
     border-radius: 10px;
@@ -199,4 +199,52 @@
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+
+
+
+
+
+/* Image slider */
+.image-slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.image-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    max-height: 300px; /* Adjust as needed */
+    flex: 1;
+}
+
+.image-slider img {
+    width: 100%;
+    display: none;
+    transition: opacity 0.5s ease;
+}
+
+.image-slider img.active {
+    display: block;
+    opacity: 1;
+}
+
+.image-slider .prev,
+.image-slider .next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+}
+
+.image-slider .prev:hover,
+.image-slider .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }

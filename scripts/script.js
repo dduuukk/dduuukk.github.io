@@ -255,7 +255,38 @@ function setRandomStyles(element, layer) {
 
 
 
+// Modal stuff
 
+// Modal structure
+const projectData = {
+    'project-1': {
+        title: 'STM32 MIDI Sample Player',
+        description: 'Description for Project 1.',
+        images: [
+            'path/to/image1.jpg',
+            'path/to/image2.jpg',
+            'path/to/image3.jpg'
+        ]
+    },
+    'project-2': {
+        title: 'Plantware Firmware',
+        description: 'Description for Project 2.',
+        images: [
+            'path/to/image4.jpg',
+            'path/to/image5.jpg',
+            'path/to/image6.jpg'
+        ]
+    },
+    'project-3': {
+        title: 'Othello / Reversi Game',
+        description: 'Description for Project 3.',
+        images: [
+            './assets/project-3/reversi-gameboard.png',
+            './assets/project-3/reversi-login.png',
+            './assets/project-3/reversi-menu.png'
+        ]
+    }
+};
 
 
 
@@ -270,6 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
     learnMoreBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const project = btn.getAttribute('data-project');
+            console.log(project);
             openModal(project);
         });
     });
@@ -284,14 +316,27 @@ document.addEventListener('DOMContentLoaded', () => {
     function openModal(project) {
         // Load project content dynamically (example content here)
         const modalBody = modal.querySelector('.modal-body');
-        modalBody.innerHTML = `
-            <h2>${project}</h2>
-            <p>Detailed information about ${project}.</p>
-            <div class="image-slider">
-                <img src="project-1.png" alt="">
-                <!-- Add more images as needed -->
-            </div>
-        `;
+        const projectInfo = projectData[project];
+
+        if (projectInfo) {
+            modalBody.innerHTML = `
+                <div class="image-slider-container">
+                    <button class="prev">&#10094;</button>
+                    <div class="image-slider">
+                        ${projectInfo.images.map((img, index) => `<img src="${img}" class="${index === 0 ? 'active' : ''}" alt="">`).join('')}
+                    </div>
+                    <button class="next">&#10095;</button>
+                </div>
+                <h2>${projectInfo.title}</h2>
+                <p>${projectInfo.description}</p>
+            `;
+            initializeSlider(modalBody.querySelector('.image-slider-container'));
+        } else {
+            modalBody.innerHTML = `
+                <h2>Project Not Found</h2>
+                <p>The details for this project are not available.</p>
+            `;
+        }
 
         modal.style.display = 'flex'; // Ensure the modal is displayed
         setTimeout(() => {
@@ -310,5 +355,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.style.display = 'none'; // Hide the modal after transition
             }, 300); // Match the transition duration
         // }, 300); // Match the transition duration
+    }
+
+    function initializeSlider(container) {
+        let currentIndex = 0;
+        const slider = container.querySelector('.image-slider');
+        const images = slider.querySelectorAll('img');
+        const prevButton = container.querySelector('.prev');
+        const nextButton = container.querySelector('.next');
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.remove('active');
+                if (i === index) {
+                    img.classList.add('active');
+                }
+            });
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+            showImage(currentIndex);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            showImage(currentIndex);
+        });
+
+        // Show the first image initially
+        showImage(currentIndex);
     }
 });
