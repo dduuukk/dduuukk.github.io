@@ -207,6 +207,7 @@
 
 
 /* Image slider */
+/* Image slider */
 .image-slider-container {
     display: flex;
     align-items: center;
@@ -233,8 +234,8 @@
     opacity: 1;
 }
 
-.image-slider .prev,
-.image-slider .next {
+.image-slider-container .prev,
+.image-slider-container .next {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
@@ -242,9 +243,24 @@
     cursor: pointer;
     font-size: 18px;
     border-radius: 50%;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-.image-slider .prev:hover,
-.image-slider .next:hover {
+.image-slider-container .prev:hover,
+.image-slider-container .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+.image-slider-container .prev,
+.image-slider-container .next {
+    border: 2px solid white;
+    border-radius: 10px;
+    margin: 10px;
+    background: var(--body-color);
+}
+
+.image-slider-container .prev:hover,
+.image-slider-container .next:hover {
+    background: white;
+    color: var(--body-color);
 }

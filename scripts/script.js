@@ -323,7 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="image-slider-container">
                     <button class="prev">&#10094;</button>
                     <div class="image-slider">
-                        ${projectInfo.images.map((img, index) => `<img src="${img}" class="${index === 0 ? 'active' : ''}" alt="">`).join('')}
+                        ${projectInfo.images.map((img, index) => `<div><img src="${img}" alt=""></div>`).join('')}
                     </div>
                     <button class="next">&#10095;</button>
                 </div>
