@@ -173,7 +173,7 @@
     padding: 20px;
     border: 3px solid white;
     width: 80%;
-    max-width: 600px;
+    max-width: 800px;
     border-radius: 10px;
     transition: transform 0.3s ease, opacity 0.3s ease;
     transform: translateY(-50px); /* Only transform vertically */
@@ -207,35 +207,31 @@
 
 
 /* Image slider */
-/* Image slider */
+/* Custom styles for the image slider */
 .image-slider-container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 10px;
+    align-items: center;
+    width: 100%;
+    height: 400px; /* Adjust as needed */
+    overflow: hidden;
 }
 
 .image-slider {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    max-height: 300px; /* Adjust as needed */
-    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 100%;
 }
 
 .image-slider img {
-    width: 100%;
-    display: none;
-    transition: opacity 0.5s ease;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensures the image scales properly */
 }
 
-.image-slider img.active {
-    display: block;
-    opacity: 1;
-}
-
-.image-slider-container .prev,
-.image-slider-container .next {
+.slick-prev, .slick-next {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
@@ -244,23 +240,20 @@
     font-size: 18px;
     border-radius: 50%;
     transition: background 0.3s ease, color 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
 }
 
-.image-slider-container .prev:hover,
-.image-slider-container .next:hover {
+.slick-prev:hover, .slick-next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.image-slider-container .prev,
-.image-slider-container .next {
-    border: 2px solid white;
-    border-radius: 10px;
-    margin: 10px;
-    background: var(--body-color);
+.slick-prev {
+    left: -40px; /* Position outside the slider */
 }
 
-.image-slider-container .prev:hover,
-.image-slider-container .next:hover {
-    background: white;
-    color: var(--body-color);
+.slick-next {
+    right: -40px; /* Position outside the slider */
 }

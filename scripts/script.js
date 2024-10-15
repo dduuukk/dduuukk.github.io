@@ -321,16 +321,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (projectInfo) {
             modalBody.innerHTML = `
                 <div class="image-slider-container">
-                    <button class="prev">&#10094;</button>
                     <div class="image-slider">
                         ${projectInfo.images.map((img, index) => `<div><img src="${img}" alt=""></div>`).join('')}
                     </div>
-                    <button class="next">&#10095;</button>
                 </div>
                 <h2>${projectInfo.title}</h2>
                 <p>${projectInfo.description}</p>
             `;
-            initializeSlider(modalBody.querySelector('.image-slider-container'));
+            initializeSlider(modalBody.querySelector('.image-slider'));
         } else {
             modalBody.innerHTML = `
                 <h2>Project Not Found</h2>
@@ -357,33 +355,23 @@ document.addEventListener('DOMContentLoaded', () => {
         // }, 300); // Match the transition duration
     }
 
-    function initializeSlider(container) {
-        let currentIndex = 0;
-        const slider = container.querySelector('.image-slider');
-        const images = slider.querySelectorAll('img');
-        const prevButton = container.querySelector('.prev');
-        const nextButton = container.querySelector('.next');
-
-        function showImage(index) {
-            images.forEach((img, i) => {
-                img.classList.remove('active');
-                if (i === index) {
-                    img.classList.add('active');
-                }
-            });
-        }
-
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-            showImage(currentIndex);
+    function initializeSlider(slider) {
+        $(slider).slick({
+            autoplay: true,
+            autoplaySpeed: 3000,
+            dots: false,
+            arrows: true,
+            prevArrow: '<button type="button" class="slick-prev">&#10094;</button>',
+            nextArrow: '<button type="button" class="slick-next">&#10095;</button>',
+            fade: false,
+            cssEase: 'linear',
+            pauseOnHover: true,
+            pauseOnFocus: true
         });
 
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-            showImage(currentIndex);
+        // Pause autoplay on user interaction
+        $(slider).on('mousedown touchstart', function() {
+            $(slider).slick('slickPause');
         });
-
-        // Show the first image initially
-        showImage(currentIndex);
     }
 });
