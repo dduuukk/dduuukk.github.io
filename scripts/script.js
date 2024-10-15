@@ -321,12 +321,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (projectInfo) {
             modalBody.innerHTML = `
                 <div class="image-slider-container">
+                    <button type="button" class="custom-prev">&#10094;</button>
                     <div class="image-slider">
                         ${projectInfo.images.map((img, index) => `<div><img src="${img}" alt=""></div>`).join('')}
                     </div>
+                    <button type="button" class="custom-next">&#10095;</button>
                 </div>
-                <h2>${projectInfo.title}</h2>
-                <p>${projectInfo.description}</p>
+                <div class="modal-text">
+                    <h2>${projectInfo.title}</h2>
+                    <p>${projectInfo.description}</p>
+                </div>
             `;
             initializeSlider(modalBody.querySelector('.image-slider'));
         } else {
@@ -358,20 +362,31 @@ document.addEventListener('DOMContentLoaded', () => {
     function initializeSlider(slider) {
         $(slider).slick({
             autoplay: true,
-            autoplaySpeed: 3000,
+            autoplaySpeed: 5000,
             dots: false,
-            arrows: true,
-            prevArrow: '<button type="button" class="slick-prev">&#10094;</button>',
-            nextArrow: '<button type="button" class="slick-next">&#10095;</button>',
+            arrows: false,
+            // prevArrow: '<button type="button" class="slick-prev">&#10094;</button>',
+            // nextArrow: '<button type="button" class="slick-next">&#10095;</button>',
             fade: false,
-            cssEase: 'linear',
+            cssEase: 'ease',
             pauseOnHover: true,
             pauseOnFocus: true
         });
 
         // Pause autoplay on user interaction
-        $(slider).on('mousedown touchstart', function() {
+        $(slider).on('mousedown touchstart', function () {
             $(slider).slick('slickPause');
+        });
+
+        // $(slider).closest('.image-slider-container').append(prevButton, nextButton);
+
+        // Add click events for custom buttons
+        document.querySelector('.custom-prev').addEventListener('click', function() {
+            $(slider).slick('slickPrev');
+        });
+
+        document.querySelector('.custom-next').addEventListener('click', function() {
+            $(slider).slick('slickNext');
         });
     }
 });
