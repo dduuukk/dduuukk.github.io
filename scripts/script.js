@@ -261,25 +261,68 @@ function setRandomStyles(element, layer) {
 const projectData = {
     'project-1': {
         title: 'STM32 MIDI Sample Player',
-        description: 'Description for Project 1.',
+        description: `This project focused on developing a bare-metal audio 
+        sample player with MIDI input support using an STM32H7 development board. 
+        The primary objective was to parse and play .WAV files stored on an SD card 
+        upon receiving MIDI keypresses. <br><br>
+        
+        Led the development of a high-performance DMA-based audio driver, which was 
+        integral to our project's success. Leveraging the HAL library, H7 DMA, and 
+        SAI FIFO, my focus was on ensuring seamless transmission of user-parsed 
+        .WAV data to the Audio CODEC for playback. The driver handled the 
+        initialization of all necessary hardware components and managed data 
+        transfer to the DMA. The driver enabled the SAI FIFO to autonomously 
+        pull data from the DMA, facilitating asynchronous streaming capabilities. 
+        The completed driver not only allowed for smooth audio streaming playback, 
+        but also minimized CPU stress and achieved smoother audio playback, 
+        especially with larger input sample buffer sizes.`,
         images: [
-            'path/to/image1.jpg',
-            'path/to/image2.jpg',
-            'path/to/image3.jpg'
+            './assets/project-1/sample-player-main-image.png',
+            './assets/project-1/boomba-system.png',
+            './assets/project-1/audio-driver-dataflow.png',
+            './assets/project-1/audio-driver-class.png'
         ]
     },
     'project-2': {
         title: 'Plantware Firmware',
-        description: 'Description for Project 2.',
+        description: `Our EECE capstone project (self-developed) created a indoor 
+        plant care ecosystem. Our system utilized ESP32-C6 microcontrollers 
+        to establish a WiFi mesh network of sensors, seamlessly 
+        communicating plant data with a central hub, dynamic outputs, 
+        and backend. The ecosystem was designed for scalability, accommodating 
+        multiple sensors per node and offering a plug-and-play setup for users. 
+        Our goal was to eliminate the learning curve associated with plant care 
+        technology, making it effortlessly easy and extremely expandable. <br><br>
+        
+        As the lead and only embedded software engineer on the project, 
+        I leveraged ESP-IDF and ESP Arduino to create the firmware. 
+        Key features implemented include automatic sensor recognition, 
+        WiFi mesh management using the PainlessMesh API, and seamless backend 
+        integration via HTTPS. Other important features are EEPROM management 
+        classes to ensure data persistence across power cycles and integrated 
+        essential functionalities such as Bluetooth setup and sensor data 
+        interpretation. To successfully do this, I forked two Arduino libraries 
+        and adjusted them for ESP32-C6 compatibility on PlatformIO.`,
         images: [
-            'path/to/image4.jpg',
-            'path/to/image5.jpg',
-            'path/to/image6.jpg'
+            './assets/project-2/plantware-main-image.png',
+            './assets/project-2/plantware-highlevel-system.png',
+            './assets/project-2/plantware-lowlevel-system.png'
         ]
     },
     'project-3': {
         title: 'Othello / Reversi Game',
-        description: 'Description for Project 3.',
+        description: `Developed an online Othello game allowing users 
+        to play against AI or each other (locally or online). 
+        Utilized Object-Oriented Design (specifically MVC) and 
+        employed multiple languages, including JavaScript for 
+        game logic and AI model, HTML for GUI, and SQL for the 
+        database. <br><br>
+        
+        The project underwent meticulous documentation and diagramming, 
+        including use case, class, activity, and sequence diagrams 
+        using Visual Paradigm. Co-led backend development for 
+        game logic and Node backend server / socket development. 
+        Responsible for database integration.`,
         images: [
             './assets/project-3/reversi-gameboard.png',
             './assets/project-3/reversi-login.png',
@@ -320,6 +363,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (projectInfo) {
             modalBody.innerHTML = `
+                <div class="modal-text">
+                    <h2>${projectInfo.title}</h2>
+                </div>
                 <div class="image-slider-container">
                     <button type="button" class="custom-prev">&#10094;</button>
                     <div class="image-slider">
@@ -328,7 +374,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button type="button" class="custom-next">&#10095;</button>
                 </div>
                 <div class="modal-text">
-                    <h2>${projectInfo.title}</h2>
                     <p>${projectInfo.description}</p>
                 </div>
             `;
